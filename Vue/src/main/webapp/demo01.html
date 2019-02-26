@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+
+
+<!--vue.js网络引入地址;
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>测试vue基本命令</title>
+
+</head>
+<script src="js/vue.js v2.6.7.js"></script>
+<body>
+<div id="app">
+    {{flag}},{{message+10+100}}
+    <!--<button type="button" @click="fun('你好')">触发按钮</button>-->
+    <button type="button" v-on:click="fun('你好')">触发按钮</button>
+
+    <input type="text" v-on:keydown="fun1($event)">
+
+
+</div>
+
+</body>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            message:10,
+            flag:true
+        },
+        methods:{
+            fun:function (m) {
+                this.flag=!this.flag;
+                this.flag=m;
+            },
+            fun1:function (e) {
+                var a = e.keyCode;
+                if (a>=48 && a<=57){
+                    e.preventDefault();
+                }
+
+            }
+        }
+    })
+</script>
+</html>

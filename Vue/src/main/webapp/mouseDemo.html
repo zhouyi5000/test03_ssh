@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标事件测试</title>
+    <script src="js/vue.js v2.6.7.js"></script>
+</head>
+<style>
+    #aaa{
+        background-color: red;
+        width: 450px;
+    }
+
+</style>
+
+
+
+<body>
+<div id="app">
+<!--
+<input type="text"  v-on:mouseover="fun()" >
+-->
+
+    <div id="aaa" style="background-color: chartreuse" v-on:mouseover="fun">11
+    <textarea maxlength="30" v-on:mouseover="fun2">你好</textarea>
+
+    </div>
+
+
+    <form action="http://www.baidu.com" >
+        <input type="button" value="提交"  >
+    <input type="text" v-on:keydown="fun2">
+
+    </form>
+
+----------------------------------
+    <span v-html="message"></span>
+    <span v-text="message"></span>
+    <span v-html="message"></span>
+    <span v-text="message"></span>
+
+
+
+    <font :color=ys2 size="55px">你好啊</font>
+    <font v-bind:color=ys1 size="55px">你好啊</font>
+    <font v-bind={color:ys1}>你好啊辅导费</font><br>
+
+    <input type="text" v-model=ys1>
+    <input type="text" v-model=ys2>
+    <input type="button" v-on:click=fun3 value="你好">
+
+    <span v-if=true>345-fsdklfsnldfsdf</span>
+
+
+
+
+
+
+</div>
+</body>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            message:"<font color='red'>你好</font>",
+            ys1:"red",
+            ys2:"green",
+        },
+        methods:{
+            fun:function () {
+                alert(33);
+            },
+            fun2:function (e) {
+                alert(44);
+            },
+            fun3:function () {
+                alert(this.ys1+"  "+ this.ys2)
+                this.ys1="nihao";
+            }
+        }
+    })
+</script>
+
+</html>
